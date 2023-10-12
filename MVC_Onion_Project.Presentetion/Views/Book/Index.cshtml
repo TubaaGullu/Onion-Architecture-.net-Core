@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MVC_Onion_Project.Presentation.Models.BookVM_s.BookListVM>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">*@
+
+<p>
+	<a style="color: white" asp-action="Create">Create New</a>
+</p>
+
+<div class="row">
+	<div>
+		<h1 style="color:white">Book Table</h1>
+	</div>
+	<div class="col-12">
+		<div class="card mb-4">
+			<div class="card-header pb-0">
+
+				<a class="btn btn-success" asp-controller="Book" asp-action="Create">Create</a>
+			</div>
+			<div class="card-body px-0 pt-0 pb-2">
+				<div class="table-responsive p-0 ">
+					<table class="table align-items-center mb-0 ">
+						<thead>
+							<tr>
+								@*       <th>
+								@Html.DisplayNameFor(model => model.Id)
+								</th>*@
+								<th>
+									@Html.DisplayNameFor(model => model.Name)
+								</th>
+								<th>
+									@Html.DisplayNameFor(model => model.AuthorName)
+								</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var item in Model)
+							{
+								<tr>
+									@*           <td>
+								@Html.DisplayFor(modelItem => item.Id)
+								</td>*@
+									<td>
+										@Html.DisplayFor(modelItem => item.Name)
+									</td>
+									<td>
+										@Html.DisplayFor(modelItem => item.AuthorName)
+									</td>
+
+									<td class="float-lg-end">
+										<a class="btn btn-warning" asp-controller="Book" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+										<a class="btn btn-primary" asp-controller="Book" asp-action="Details" asp-route-id="@item.Id">Details</a>
+										<a class="btn btn-danger" asp-controller="Book" asp-action="Delete" asp-route-id="@item.Id" onclick="return showDataAlert()">Delete</a>
+
+									</td>
+
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

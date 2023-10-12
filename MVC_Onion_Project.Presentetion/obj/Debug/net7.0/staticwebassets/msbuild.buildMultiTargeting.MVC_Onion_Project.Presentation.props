@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MVC_Onion_Project.Presentation.props" />
+</Project>

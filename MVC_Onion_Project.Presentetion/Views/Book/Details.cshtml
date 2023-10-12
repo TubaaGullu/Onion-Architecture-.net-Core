@@ -1,0 +1,58 @@
+﻿@model MVC_Onion_Project.Presentation.Models.BookVM_s.BookDetailVM
+
+@{
+	ViewData["Title"] = "Details";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="color: white">Details Book</h1>
+
+<div>
+	<div class="card col-md-8">
+		<div class="card-body px-3">
+
+			<dl class="row">
+				@*        <dt class = "col-sm-2">
+				@Html.DisplayNameFor(model => model.Id)
+				</dt>
+				<dd class = "col-sm-10">
+				@Html.DisplayFor(model => model.Id)
+				</dd>*@
+				<dt class="col-sm-2">
+					@Html.DisplayNameFor(model => model.Name)
+				</dt>
+				<dd class="col-sm-10">
+					@Html.DisplayFor(model => model.Name)
+				</dd>
+				<dt class="col-sm-2">
+					@Html.DisplayNameFor(model => model.PublicationDate)
+				</dt>
+				<dd class="col-sm-10">
+					@Html.DisplayFor(model => model.PublicationDate)
+				</dd>
+				<dt class="col-sm-2">
+					@Html.DisplayNameFor(model => model.AuthorName)
+				</dt>
+				<dd class="col-sm-10">
+					@Html.DisplayFor(model => model.AuthorName)
+				</dd>
+				<dt class="col-sm-2">
+					@Html.DisplayNameFor(model => model.CategoryList)
+				</dt>
+				<dd class="col-sm-10">
+					@(Model.CategoryList != null ? string.Join(", ", Model.CategoryList.Select(c => c.Text)) : " ")
+				</dd>
+
+
+			</dl>
+			<div>
+				<a class="btn btn-warning" asp-controller="Book" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+
+				<a class="btn btn-info" asp-action="Index">Back to List</a>
+
+			</div>
+		</div>
+		<div>
+</div>
+
+

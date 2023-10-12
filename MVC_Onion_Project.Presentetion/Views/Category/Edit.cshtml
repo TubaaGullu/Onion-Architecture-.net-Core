@@ -1,0 +1,41 @@
+﻿@model MVC_Onion_Project.Presentation.Models.CategoryVM_s.CategoryEditVM
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="color: white">Edit Category</h1>
+
+
+
+
+
+
+<div class="row">
+    <div class=" card col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+
+                <input type="submit" value="Save" class="btn btn-warning" />
+                <a class="btn btn-info" asp-action="Index">Back to List</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
